@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for message in messages %}
+    <div role="alert">
+        {{message}}
+        <button type="button" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h1> Signup</h1>
+    <form method="POST">
+        <label for="email">Email-address</label>
+        <input 
+        type="text"
+        id = "email"
+        name = "email"
+        placeholder="enter email"
+        >
+        <label for="name">Name</label>
+        <input 
+        type="text"
+        id = "name"
+        name = "name"
+        placeholder="enter name"
+        >
+        <label for="password1">Password</label>
+        <input 
+        type="password"
+        id = "password1"
+        name = "password1"
+        placeholder="enter password"
+        >
+        <label for="password2">Confirm Password</label>
+        <input 
+        type="password"
+        id = "password2"
+        name = "password2"
+        placeholder="Confirm Password"
+        >
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
